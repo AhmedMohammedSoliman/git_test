@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:git_test/showDetailes/show_detailes.dart';
 
 import 'home/home_screen.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName : (context) => HomeScreen() ,
+        ShowDetailes.routeName : (context) => ShowDetailes() ,
       },
     );
   }
