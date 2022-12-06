@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:git_test/showDetailes/show_detailes.dart';
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatefulWidget{
 
   static const String routeName = "home";
+
+
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String email = "";
+  String password = "" ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +25,9 @@ class HomeScreen extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextFormField(
+              onChanged: (text){
+                email = text ;
+              },
               decoration: InputDecoration(
                   hintText: "enter your email" ,
                   enabledBorder: UnderlineInputBorder(
@@ -22,6 +36,9 @@ class HomeScreen extends StatelessWidget{
               ),
             ) ,
             TextFormField(
+              onChanged: (text){
+                password = text ;
+              },
               decoration: InputDecoration(
                   hintText: "enter your password" ,
                   enabledBorder: UnderlineInputBorder(
@@ -31,6 +48,11 @@ class HomeScreen extends StatelessWidget{
             ) ,
             ElevatedButton(
               onPressed: (){
+                Navigator.pushNamed(context, ShowDetailes.routeName ,
+                arguments: {
+                  "password" : password ,
+                  "email" : email
+                });
               },
               child: Text("Let's go") ,
               style: ElevatedButton.styleFrom(primary: Colors.black)
