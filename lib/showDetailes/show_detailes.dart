@@ -5,16 +5,17 @@ class ShowDetailes extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    var args = ModalRoute.of(context)?.settings.arguments  as Map;
+
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.red,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-               Text("${args ["email"]}" , style: TextStyle(fontSize: 30),) ,
+               Text("Email" , style: TextStyle(fontSize: 30),) ,
               SizedBox(height: 20,),
-              Text("${args ["password"]}", style: TextStyle(fontSize: 30),)
+              Text("Password", style: TextStyle(fontSize: 30),)
             ],
           ),
         ),
